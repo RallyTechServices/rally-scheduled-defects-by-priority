@@ -118,7 +118,7 @@ Ext.define('CustomApp', {
             },
             chartConfig: {
                 chart: {
-                    height: me.getHeight()
+                    height: me.getHeight() - 75
                 },
                 title: {
                     text: 'Defect Status',
