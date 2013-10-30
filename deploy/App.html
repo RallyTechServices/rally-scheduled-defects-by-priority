@@ -3,11 +3,11 @@
 <head>
     <title>Defect Status</title>
     <!--  (c) 2013 Rally Software Development Corp.  All Rights Reserved. -->
-    <!--  Build Date: Sat Oct 26 2013 19:36:02 GMT-0700 (PDT) -->
+    <!--  Build Date: Wed Oct 30 2013 08:22:29 GMT-0700 (PDT) -->
     
     <script type="text/javascript">
-        var APP_BUILD_DATE = "Sat Oct 26 2013 19:36:02 GMT-0700 (PDT)";
-        var CHECKSUM = 3511326538;
+        var APP_BUILD_DATE = "Wed Oct 30 2013 08:22:29 GMT-0700 (PDT)";
+        var CHECKSUM = 3643017470;
     </script>
     
     <script type="text/javascript" src="/apps/2.0rc1/sdk.js"></script>
@@ -286,6 +286,16 @@ Ext.define('CustomApp', {
                 }]
             }
         });
+    }
+});
+/*
+ * Fixes rc1 eternal sparkler
+ * 
+ */
+Ext.override(Rally.ui.chart.Chart,{
+    onRender: function () {
+        this.callParent(arguments);
+        this._unmask();
     }
 });
             
